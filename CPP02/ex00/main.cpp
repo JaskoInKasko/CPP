@@ -9,6 +9,8 @@ int	main()
 	c = b;
 
 	cout << a.getRawBits() << endl;
+	a.setRawBits(2);
+	cout << a.getRawBits() << endl;
 	cout << b.getRawBits() << endl;
 	cout << c.getRawBits() << endl;
 	return 0;
