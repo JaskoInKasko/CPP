@@ -1,20 +1,16 @@
 #include <iostream>
 
-using std::string;
-using std::cout;
-using std::endl;
-
 int main()
 {
-    string var = "HI THIS IS BRAIN";
-    string *stringPTR = &var;
-    string &stringREF = var;
+    std::string var = "HI THIS IS BRAIN";
+    std::string *stringPTR = &var;
+    std::string &stringREF = var;
 
-    cout << "Memory address of var: " << &var << endl;
-    cout << "Memory address of stringPTR: " << stringPTR << endl;
-    cout << "Memory address of stringREF: " << &stringREF << endl;
+    std::cout << "Memory address of var: " << &var << std::endl;
+    std::cout << "Memory address of stringPTR: " << stringPTR << std::endl;
+    std::cout << "Memory address of stringREF: " << &stringREF << std::endl;
 
-    cout << "Value of var: " << var << endl;
-    cout << "Value of stringPTR: " << *stringPTR << endl;
-    cout << "Value of stringREF: " <<  stringREF << endl;
+    std::cout << "Value of var: " << var << std::endl;
+    std::cout << "Value of stringPTR: " << *stringPTR << std::endl;
+    std::cout << "Value of stringREF: " <<  stringREF << std::endl;
 }

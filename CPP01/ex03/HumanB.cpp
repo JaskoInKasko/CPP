@@ -1,6 +1,6 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(string name) {
+HumanB::HumanB(std::string name) {
     this->name = name;
     this->weapon = NULL;
 }
@@ -13,7 +13,7 @@ void HumanB::setWeapon(Weapon &weaponREF) {
 
 void HumanB::attack() {
     if (weapon)
-        cout << this->name << " attacks with their " << weapon->getType() << endl;
+        std::cout << this->name << " attacks with their " << weapon->getType() << std::endl;
     else
-        cout << this->name << " has no weapon to attack!" << endl;
+        std::cout << this->name << " has no weapon to attack!" << std::endl;
 }

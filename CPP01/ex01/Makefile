@@ -1,6 +1,6 @@
 
 C++ = c++
-C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+C++_FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Zombie.cpp
 
 OBJ = $(SRC:.cpp=.o)

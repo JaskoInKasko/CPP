@@ -11,8 +11,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(C++) $(C++_FLAGS) $(OBJ) -o $(NAME)
 
-# %.o: %.cpp
-# 	$(C++) $(C++_FLAGS) -c $< -o $@
+%.o: %.cpp
+	$(C++) $(C++_FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

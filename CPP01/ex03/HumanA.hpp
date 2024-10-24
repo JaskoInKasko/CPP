@@ -3,16 +3,12 @@
 # include <iostream>
 # include "Weapon.hpp"
 
-using std::string;
-using std::cout;
-using std::endl;
-
 class HumanA {
     private:
-        string name;
+        std::string name;
         Weapon &weapon;
     public:
-        HumanA(string name, Weapon &weaponREF);
+        HumanA(std::string name, Weapon &weaponREF);
         void attack();
         ~HumanA();
 };

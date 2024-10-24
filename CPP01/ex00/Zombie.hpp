@@ -2,15 +2,12 @@
 # define ZOMBIE_H
 
 #include <iostream>
-using std::string;
-using std::cout;
-using std::endl;
 
 class Zombie {
 	private:
-		string name;
+		std::string name;
 	public:
-		Zombie(string name);
+		Zombie(std::string name);
 		~Zombie();
 		void announce();
 };

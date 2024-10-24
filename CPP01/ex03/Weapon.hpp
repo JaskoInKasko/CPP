@@ -2,16 +2,14 @@
 # define WEAPON_H
 # include <iostream>
 
-using std::string;
-
 class Weapon {
     private:
-        string type;
+        std::string type;
     
     public:
-        Weapon(string weaponType);
-        const string& getType() const;
-        void setType(string newType);
+        Weapon(std::string weaponType);
+        const std::string& getType() const;
+        void setType(std::string newType);
 };
 
 #endif

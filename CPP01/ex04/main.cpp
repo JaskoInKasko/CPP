@@ -8,6 +8,6 @@ int	main(int argc, char *argv[])
 		init.start_program();
 	}
 	else
-		cout << "Wrong amount of Arguments!\nExpected 4" << endl;
+		std::cout << "Wrong amount of Arguments!\nExpected 4" << std::endl;
 	return 0;
 }

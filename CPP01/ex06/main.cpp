@@ -8,6 +8,6 @@ int main(int argc, char *argv[])
         program.complain(argv[1]);
     }
     else
-        cout << "Wring amount of arguments!\nExpected 2" << endl;
+        std::cout << "Wrong amount of arguments!\nExpected 2" << std::endl;
     return 0;
 }

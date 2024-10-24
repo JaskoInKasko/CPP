@@ -2,22 +2,22 @@
 
 Zombie::Zombie() {
     this->name = name;
-    cout << "Constructor 1 has been called" << endl;
+    std::cout << "Constructor 1 has been called" << std::endl;
 }
 
 Zombie::~Zombie() {
-    cout << name << " has been destroyed" << endl;
+    std::cout << name << " has been destroyed" << std::endl;
 }
 
 void Zombie::announce() {
-	cout << name << ": BraiiiiiiinnnzzzZ..." << endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name) {
     this->name = name;
 }
 
-Zombie* zombieHorde(int N, string name)
+Zombie* zombieHorde(int N, std::string name)
 {
     Zombie *horde = new Zombie[N];
 
