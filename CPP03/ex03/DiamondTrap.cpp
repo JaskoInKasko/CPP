@@ -45,30 +45,6 @@ void DiamondTrap::attack(const std::string& target) {
     return ;
 }
 
-// void DiamondTrap::takeDamage(unsigned int amount) {
-//     if (this->ep > 0)
-//     {
-//         std::cout << amount << " damage has beed taken" << std::endl;
-//         this->hp = this->hp - amount;
-//         std::cout << "Current hp: " << this->hp << std::endl;
-//     }
-//     else
-//         std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
-// }
-
-// void DiamondTrap::beRepaired(unsigned int amount) {
-//     if (this->ep > 0)
-//     {
-//         std::cout << "DiamondTrap repairs itself by " << amount << " hp" << std::endl;
-//         this->hp = this->hp + amount;
-//         this->ep--;
-//         std::cout << "Current hp: " << this->hp << std::endl;
-//         std::cout << "Current ep: " << this->ep << std::endl;
-//     }
-//     else
-//         std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
-// }
-
 void DiamondTrap::whoAmI(void) {
     std::cout << "DiamondTraps name: " << this->name << std::endl;
     std::cout << "ClapTraps name: " << ClapTrap::name << std::endl;

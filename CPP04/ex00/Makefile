@@ -1,10 +1,10 @@
 
 C++ = c++
-C++_FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp sed.cpp
+C++_FLAGS = -Wall -Wextra -Werror
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJ = $(SRC:.cpp=.o)
-NAME = Sed_is_for_losers
+NAME = Polymorphism
 
 all: $(NAME)
 
