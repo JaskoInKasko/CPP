@@ -102,13 +102,13 @@ Fixed Fixed::operator-(Fixed const &fixed) {
 
 Fixed Fixed::operator*(Fixed const &fixed) {
     Fixed result;
-    result.fixedpoint = this->fixedpoint * fixed.fixedpoint;
+    result.fixedpoint = (this->fixedpoint * fixed.fixedpoint) / 256;
     return result;
 }
 
 Fixed Fixed::operator/(Fixed const &fixed) {
     Fixed result;
-    result.fixedpoint = this->fixedpoint / fixed.fixedpoint;
+    result.fixedpoint = (this->fixedpoint * 256) / fixed.fixedpoint;
     return result;
 }
 

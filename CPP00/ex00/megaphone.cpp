@@ -10,8 +10,6 @@ int main(int argc, char *argv[])
             {
                 if (argv[i][ic] != '"')
                     std::cout << (char)std::toupper(argv[i][ic]);
-                else
-                    ic++;
             }
         }
         std::cout << std::endl;

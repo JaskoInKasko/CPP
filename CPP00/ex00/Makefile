@@ -1,7 +1,7 @@
 
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = ex00.cpp
+SRC = megaphone.cpp
 
 OBJ = $(SRC:.cpp=.o)
 NAME = megaphone
