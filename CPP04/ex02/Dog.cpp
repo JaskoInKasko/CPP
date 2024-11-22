@@ -4,6 +4,7 @@
 Dog::Dog() {
     std::cout << "Dog Default constructor called" << std::endl;
     this->type = "Dog";
+    this->brain = new Brain();
 }
 
 Dog::Dog(const Dog& copy) : Animal(copy) {
@@ -21,6 +22,7 @@ Dog& Dog::operator=(const Dog& assign) {
 }
 
 Dog::~Dog() {
+    delete this->brain;
     std::cout << "Dog Destructor called" << std::endl;
 }
 
