@@ -7,3 +7,5 @@ AMateria::AMateria(std::string const & type) {
 std::string const & AMateria::getType() const {
     return this->type;
 }
+
+AMateria* clone() const = 0;

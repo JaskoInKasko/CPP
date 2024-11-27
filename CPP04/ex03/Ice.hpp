@@ -1,8 +1,11 @@
 #ifndef ICE_H
 # define ICE_H
 
-class Ice {
+# include "AMateria.hpp" 
 
+class Ice : public AMateria {
+    public:
+        AMateria* clone() const;
 };
 
 #endif
