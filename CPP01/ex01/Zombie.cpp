@@ -1,7 +1,6 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie() {
-    this->name = name;
     std::cout << "Constructor 1 has been called" << std::endl;
 }
 

@@ -39,16 +39,20 @@ void	Harl::complain(std::string level) {
     switch (get_level(levels, level))
     {
         case 0:
-            (this->*func[0])();
+            for(int i = get_level(levels, level); i < 4; i++)
+                (this->*func[i])();
             break ;
         case 1:
-            (this->*func[1])();
+            for(int i = get_level(levels, level); i < 4; i++)
+                (this->*func[i])();
             break ;
         case 2:
-            (this->*func[2])();
+            for(int i = get_level(levels, level); i < 4; i++)
+                (this->*func[i])();
             break ;
         case 3:
-            (this->*func[3])();
+            for(int i = get_level(levels, level); i < 4; i++)
+                (this->*func[i])();
             break ;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

@@ -46,6 +46,8 @@ void    Sed::replace_file_input(std::ifstream &file) {
 void    Sed::start_program() {
     std::ifstream    file;
 
+    if (s1.length() == 0)
+        return ;
     file.open(this->file);
     if (!file.is_open())
     {
