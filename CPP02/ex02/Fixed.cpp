@@ -1,33 +1,33 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-    cout << "Default constructor called" << endl;
+    std::cout << "Default constructor called" << std::endl;
     this->fixedpoint = 0;
 }
 
 Fixed::~Fixed() {
-    cout << "Destructor called" << endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &copy) {
-    cout << "Copy constructor called" << endl;
+    std::cout << "Copy constructor called" << std::endl;
     *this = copy;
 }
 
 Fixed& Fixed::operator=(Fixed const &fixed) {
-    cout << "Copy assignment operator called" << endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &fixed)
         this->fixedpoint = fixed.fixedpoint;
     return *this;
 }
 
 int Fixed::getRawBits(void) const {
-    cout << "getRawBits member function called" << endl;
+    std::cout << "getRawBits member function called" << std::endl;
     return this->fixedpoint;
 }
 
 void Fixed::setRawBits(int const raw) {
-    cout << "setRawBits member function called" << endl;
+    std::cout << "setRawBits member function called" << std::endl;
     this->fixedpoint = raw;
 }
 
@@ -37,12 +37,12 @@ void Fixed::setRawBits(int const raw) {
 
 
 Fixed::Fixed(int const &num_int) {
-    cout << "Int constructor called" << endl;
+    std::cout << "Int constructor called" << std::endl;
     this->fixedpoint = num_int * (1 << this->fractionalbits);
 }
 
 Fixed::Fixed(float const  &num_float) {
-    cout << "Float constructor called" << endl;
+    std::cout << "Float constructor called" << std::endl;
     this->fixedpoint = roundf(num_float * (1 << this->fractionalbits));
 }
 
@@ -51,7 +51,6 @@ int Fixed::toInt(void) const {
 }
 
 float Fixed::toFloat(void) const {
-    // std::cout << (float)this->fixedpoint << std::endl;
     return (float)this->fixedpoint / (1 << fractionalbits);
 }
 
@@ -64,7 +63,7 @@ std::ostream &operator<<(std::ostream &os, Fixed const &fixed)
 
 
 
-Fixed min(Fixed &fp_num, Fixed &fp_num2) {
+Fixed &Fixed::min(Fixed &fp_num, Fixed &fp_num2) {
     if (fp_num.getRawBits() > fp_num2.getRawBits())
         return fp_num2;
     return fp_num;
