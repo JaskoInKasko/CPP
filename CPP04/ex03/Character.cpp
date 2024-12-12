@@ -40,11 +40,12 @@ Character& Character::operator=(const Character& copy) {
 Character::~Character() {
     // std::cout << "Character destructor called" << std::endl;
     for (int i = 0; i < 4; ++i)
+    {
         if (inventory[i])
             delete inventory[i];
+    }
     for (int i = 0; i < unequippedCount; ++i)
     {
-        std::cout << unequippedCount << "\n";
         if (unequipped[i])
             delete unequipped[i];
     }
@@ -55,12 +56,16 @@ std::string const & Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
+
+    for (int i = 0; i < 4; ++i)
+        if (inventory[i] == m)
+            return ;
     for (int i = 0; i < 4; ++i)
     {
         if (!inventory[i])
         {
             inventory[i] = m;
-            return;
+            return ;
         }
     }
     delete m;

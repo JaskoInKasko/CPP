@@ -1,4 +1,5 @@
 #include <iostream>
+#include "AMateria.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
@@ -81,31 +82,28 @@ void testDeepCopy() {
 
     // Equip some Materias
     AMateria* ice = new Ice();
-    // AMateria* cure = new Cure();
+    AMateria* cure = new Cure();
 
     original.equip(ice);
-    original.equip(ice);
-    // original.equip(ice);
-    // original.unequip(0);
-    // original.unequip(1);
-    // original.unequip(2);
-    // original.equip(cure);
+    original.equip(cure);
 
-    Character copy("C1");
-    copy = original;
+    // Deep copy
+    Character copy = original;
 
     // Unequip and delete Materias in the original
-    // original.unequip(1);
+    original.unequip(0);
+    original.unequip(1);
 
     // Test if the copy's Materias are intact
-    // copy.use(0, original);
-    // copy.use(1, original);
+    copy.use(0, original);
+    copy.use(1, original);
 }
+
 
 int main() {
     std::cout << "Running edge case tests..." << std::endl;
-    // testEdgeCases();
-    testDeepCopy();
+    testEdgeCases();
+    // testDeepCopy();
     std::cout << "All tests completed!" << std::endl;
     return 0;
 }
