@@ -21,6 +21,6 @@ int main()
 
     ScavTrap c("Player2");
     c.attack("Player1");
-    // c.takeDamage(10);
-    // c.beRepaired(5);
+    c.takeDamage(10);
+    c.beRepaired(5);
 }

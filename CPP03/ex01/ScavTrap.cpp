@@ -8,7 +8,7 @@ ScavTrap::ScavTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-    std::cout << "ScavTrap Default constructor called" << std::endl;
+    std::cout << "ScavTrap parameterized constructor called" << std::endl;
     this->hp = 100;
     this->ep = 50;
     this->ad = 20;
@@ -37,36 +37,12 @@ ScavTrap::~ScavTrap() {
 
 void ScavTrap::attack(const std::string& target) {
     if (this->ep > 0)
+    {
         std::cout << "ScavTrap " << this->name <<  " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl;
-    else
-        std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
-    this->ep--;
-    std::cout << "Current ep: " << this->ep << std::endl;
-    return ;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-    if (this->ep > 0)
-    {
-        std::cout << amount << " damage has beed taken" << std::endl;
-        this->hp = this->hp - amount;
-        std::cout << "Current hp: " << this->hp << std::endl;
-    }
-    else
-        std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-    if (this->ep > 0)
-    {
-        std::cout << "ScavTrap repairs itself by " << amount << " hp" << std::endl;
-        this->hp = this->hp + amount;
         this->ep--;
-        std::cout << "Current hp: " << this->hp << std::endl;
-        std::cout << "Current ep: " << this->ep << std::endl;
     }
     else
-        std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
+        std::cout << "insufficient Energypoints.\nCurrent amount: " << this->ep << std::endl;
 }
 
 void ScavTrap::guardGate() {

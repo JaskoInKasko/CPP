@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include <climits>
 
 ClapTrap::ClapTrap() {
     std::cout << "Default constructor called" << std::endl;
@@ -7,8 +8,8 @@ ClapTrap::ClapTrap() {
     this->ad = 0;
 }
 
-ClapTrap::ClapTrap(std::string name) {
-    std::cout << "Default constructor called" << std::endl;
+ClapTrap::ClapTrap(const std::string name) {
+    std::cout << "Parameterized constructor called" << std::endl;
     this->name = name;
     this->hp = 10;
     this->ep = 10;
@@ -38,28 +39,43 @@ ClapTrap::~ClapTrap() {
 
 void ClapTrap::attack(const std::string& target) {
     if (this->ep > 0)
+    {
         std::cout << "ClapTrap " << this->name <<  " attacks " << target << ", causing " << this->ad << " points of damage!" << std::endl;
+        this->ep--;
+    }
     else
-        std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
-    this->ep--;
+        std::cout << "insufficient Energypoints.\nCurrent amount: " << this->ep << std::endl;
     std::cout << "Current ep: " << this->ep << std::endl;
-    return ;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
+    if (this->hp == 0)
+    {
+        std::cout << "Cannot attack. Target has " << this->hp << " hp" << std::endl;
+        return ;
+    }
     if (this->ep > 0)
     {
         std::cout << amount << " damage has beed taken" << std::endl;
-        this->hp = this->hp - amount;
+        if (this->hp <= amount)
+            this->hp = 0;
+        else
+            this->hp = this->hp - amount;
         std::cout << "Current hp: " << this->hp << std::endl;
     }
     else
-        std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
+        std::cout << "insufficient Energypoints.\nCurrent amount: " << this->ep << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
     if (this->ep > 0)
     {
+        if (this->hp > UINT_MAX - amount)
+        {
+            std::cout << "Cannot repair by this amount: " << amount << std::endl;
+            std::cout << "Current hp: " << this->hp << std::endl;
+            return ;
+        }
         std::cout << "ClapTrap repairs itself by " << amount << " hp" << std::endl;
         this->hp = this->hp + amount;
         this->ep--;
@@ -67,5 +83,5 @@ void ClapTrap::beRepaired(unsigned int amount) {
         std::cout << "Current ep: " << this->ep << std::endl;
     }
     else
-        std::cout << "insufficient Energypoints. Current amount:" << this->ep << std::endl;
+        std::cout << "insufficient Energypoints.\nCurrent amount: " << this->ep << std::endl;
 }
