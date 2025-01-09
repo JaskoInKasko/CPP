@@ -37,12 +37,12 @@ DiamondTrap::~DiamondTrap() {
 
 void DiamondTrap::attack(const std::string& target) {
     if (this->ep > 0)
+    {
         std::cout << "ScavTrap " << ScavTrap::name <<  " attacks " << target << ", causing " << ScavTrap::ad << " points of damage!" << std::endl;
+        ScavTrap::ep--;
+    }
     else
         std::cout << "insufficient Energypoints. Current amount:" << ScavTrap::ep << std::endl;
-    ScavTrap::ep--;
-    std::cout << "Current ep: " << ScavTrap::ep << std::endl;
-    return ;
 }
 
 void DiamondTrap::whoAmI(void) {

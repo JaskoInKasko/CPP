@@ -20,10 +20,11 @@ int main()
     // b.takeDamage(5);
     // b.beRepaired(2);
 
-    ScavTrap c("Player2");
+    // ScavTrap c("Player2");
     FragTrap d("Player3");
     d.attack("Player2");
-    c.attack("Player3");
+    d.print();
+    // c.attack("Player3");
     // c.takeDamage(10);
     // c.beRepaired(5);
 }
