@@ -1,10 +1,9 @@
 C++ = c++
-C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp\
-MateriaSource.cpp
+C++_FLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
-NAME = Interface
+NAME = Bureaucrat
 
 all: $(NAME)
 
