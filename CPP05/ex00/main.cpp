@@ -2,7 +2,8 @@
 
 int main()
 {
-    Bureaucrat a("Person1", 150);
+    Bureaucrat a("Person1", 1);
 
     std::cout << a.incgrade() << "\n";
+    std::cout << a << "\n";
 }

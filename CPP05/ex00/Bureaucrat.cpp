@@ -1,10 +1,10 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
-  std::cout << "Default constructor called\n";
+Bureaucrat::Bureaucrat() : name("Some Name"), grade(0) {
+	std::cout << "Default constructor called\n";
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name) {
+Bureaucrat::Bureaucrat( std::string name, int grade) : name(name) {
   std::cout << "Parameterized constructor called\n";
   try
   {
@@ -55,11 +55,11 @@ int Bureaucrat::incgrade() {
     if (this->grade > 1)
       this->grade--;
     else
-      throw ("Bureaucrat::GradeTooLowException\n");
+      throw std::string("Bureaucrat::GradeTooHighException\n");
   }
   catch(std::string error)
   {
-      std::cout << error;
+	std::cout << error;
   }
   return this->grade;
 }
@@ -68,13 +68,13 @@ int Bureaucrat::decgrade() {
   try
   {
     if (this->grade < 150)
-      this->grade++;
+    	this->grade++;
     else
-      throw ("Bureaucrat::GradeTooHighException\n");
+    	throw std::string("Bureaucrat::GradeTooLowException\n");
   }
   catch(std::string error)
   {
-      std::cout << error;
+	std::cout << error;
   }
   return this->grade;
 }
